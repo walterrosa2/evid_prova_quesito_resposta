@@ -1,0 +1,281 @@
+INSTRUÇÕES GERAIS IMPORTANTES:
+
+1. Sempre siga **somente** as instruções do bloco que corresponda exatamente à etapa informada na variável `ETAPA:` recebida na entrada.
+2. Ignore completamente todas as instruções de outras etapas, mesmo que estejam no mesmo arquivo.
+3. Mantenha o formato JSON puro, sem adicionar comentários, textos explicativos ou observações fora da estrutura solicitada.
+4. Nunca invente dados — use apenas as informações presentes no `TEXTO ANALISADO`.
+5. Preserve exatamente a numeração e a referência de páginas/trechos conforme aparecem no texto analisado.
+6. Caso não encontre informações para preencher, retorne a chave com valor vazio ou lista vazia conforme o formato solicitado.
+7. Siga apenas o bloco correspondente à ETAPA: informada. Ignore todas as demais instruções.
+
+---
+
+### ETAPA 1 – ÍNDICES TEMÁTICOS
+Objetivo:
+- Identificar os principais temas abordados no texto analisado, use a listagem dos pontos principais normalmente encontrado nos processos para direcionar a identificação <pontos_principais>.
+- Usar formato de chave numerada (ex: "1.01", "1.02").
+- Para cada item encontrado, retornar:
+  - "titulo": resumo curto (até 10 palavras)
+  - "resumo": descrição clara do ponto levantado
+  - "referencia": trecho ou página do processo
+  
+<pontos_principais>
+**IDENTIFICAÇÃO DO CLIENTE E DO PROCESSO**
+SEGMENTO DA EMPRESA (ATIVIDADE, PORTE, SETOR DE MERCADO).
+TIPO DE AÇÃO (INDENIZATÓRIA, RESCISÓRIA, CUMPRIMENTO DE CONTRATO, ETC.)
+DATA DE DISTRIBUIÇÃO DA AÇÃO.
+VARA E FORO COMPETENTES.
+JUIZ RESPONSÁVEL
+NÚMERO DE PROCESSO (SE JÁ EXISTENTE)
+VALOR DA CAUSA E FUNDAMENTO JURÍDICO APRENSENTADO NA INICIAL
+HISTÓRICO SOCIETÁRIO E DE GOVERNANÇA (MUDANÇAS DE CONTROLE, FUSÕES, CISÕES)
+PROCURADORES E REPRESENTANTES LEGAIS JÁ CONSTITUÍDOS (PROCURAÇÕES EM VIGOR)
+IDENTIFICAÇÃO DE OUTRAS AÇÕES JUDICIAIS OU ARBITRAIS CORRELATAS
+
+**DOCUMENTO CONTRATUAIS E COMERCIAIS**
+PROPOSTA COMERCIAL DE LICENCIAMENTO (DATA, VALORES, MÓDULOS OFERTADOS).
+CONTRATO DE LICENÇA DE USO (ASSINATURA, VIGÊNCIA, CLÁUSULAS RELEVANTES).
+PROPOSTA COMERCIAL DE IMPLANTAÇÃO (DATA, VALORES, ESCOPO PREVISTO).
+CONTRATO DE PRESTAÇÃO DE SERVIÇOS (OBRIGAÇÃO DE RESULTADO OU MEIO, CLÁUSULAS DE SUPORTE).
+ESCOPO VENDIDO (MÓDULOS, FUNCIONALIDADES PROMETIDAS).
+VALIDAÇÃO DE ESCOPO (ATAS DE REUNIÃO, HOMOLOGAÇÕES , DOCUMENTOS DE FIT-GAP).
+ADENDOS, ADITIVOS OU TERMOS DE AJUSTE CONTRATUAL
+CONDIÇÕES GERAIS DE FORNECIMENTO (SEPARADAS DOS CONTRATOS PRINCIPAIS)
+POLÍTICAS DE sla (NÍVEIS DE SERVIÇO) OU ANS PACTUADOS 
+
+**PLANEJAMENTO E EXECUÇÃO DO PROJETO **
+CRONOGRAMAS APRESENTADOS  (INICIAL E REVISADOS)
+ORDENS DE SERVIÇO EMITIDAS( VALIDAÇÃO E ACEITES)
+GO-LIVE PREVISTO E REALIZADO  (OU AUSÊNCIA)
+VALORES PAGOS (COMPROVAÇÃO VIA NOTAS FISCAIS E COMPROVANTES)
+FALHAS NO CRONOGRAMA (ATRASOS, PRORROGAÇÕES, NÃO CUMPRIMENTO)
+REGISTRO DE RECLAMAÇÕES (COMUNICAÇÕES, E-MAILS, ATAS DE REUNIÃO)
+TERMO DE ENCERRAMENTO (SE HOUVER)
+PLANO DE GESTÃO DE MUDANÇAS (CHANGE MANAGEMENT) E EVIDÊNCIAS DE SUA APLICAÇÃO
+INDICADORES DE DESEMPENHO (KPIs) DEFINIDOS PARA O PROJETO
+EVIDÊNCIAS DE TREINAMENTOS OFERECIDOS (LISTAS DE PRESENÇA, MATERIAIS DIDÁTICOS)
+
+**FASE JUDICIAL**
+PETIÇÃO INICIAL E PEDIDOS FORMULADOS
+CONTESTAÇÃO E EVENTUAIS RECONVENÇÕES
+DOCUMENTOS ANEXADOS À CONTESTAÇÃO
+RÉPLICA E DOCUMENTOS CORRESPONDENTES
+ESPECIFICAÇÃO DE PROVAS
+PRONTOS CONTROVERTIDOS DEFINIDOS EM DESPACHO SANEADOR
+QUESITOS APRESENTADOS PELAS PARTES
+ACEITE DOS ENCARGOS PERICIAIS
+PERFIL DO PERITO (ESPECIALIDADE, HISTÓRICO, EXPERIÊNCIA)
+REQUERIMENTOS E MANIFESTAÇÕES DO PERITO
+DECISÕES LIMINARES E TUTELAS DE URGÊNCIA EVENTUALMENTE CONCEDIDAS
+INCIDENTES PROCESSUAIS (EXCEÇÕES, EMBARGOS DE DECLARAÇÃO, AGRAVOS)
+REGISTRO DE AUDIÊNCIAS REALIZADAS (ATAS, DEPOIMENTOS, GRAVAÇÕES)
+
+**PRODUÇÃO DE PROVA PERICIAL** 
+DILIGÊNCIA DE DEFINIÇÃO DO MÉTODO PERICIAL (DIRETA, INDIRETA OU HÍBRIDA)
+DILIGÊNCIA PERICIAL REALIZADA (DATA, LOCAL, PARTICIPANTES, OCORRÊNCIAS
+LAUDO PERICIAL (CONCLUSÕES INICIAIS)
+MANIFESTAÇÕES DAS PARTES SOBRE O LAUDO
+QUESITOS COMPLEMENTARES
+COMPLEMENTO DO LAUDO
+CUSTOS PERICIAIS (HONORÁRIOS ARBITRADOS E PAGAMENTOS)
+EVENTUAIS ASSISTENTES TÉCNICOS NOMEADOS PELAS PARTES
+HISTÓRICO DE PERÍCIAS ANTERIORES (SE JÁ REALIZADAS EM AÇÕES SEMELHANTES)
+
+**SENTENÇA E RECURSOS**
+SENTENÇA PROFERIDA (PROCEDÊNCIA, IMPROCEDÊNCIA, PARCIAL)
+EVENTUAIS APELAÇÕES INTERPOSTAS
+CONTRARRAZÕES APRESENTADAS
+RECURSOS SUBSEQUENTES (Resp, RE)
+LIQUIDAÇÃO DE SENTENÇA (SE APLICÁVEL)
+CUMPRIMENTO PROVISÓRIO OU DEFINITIVO DA SENTENÇA
+EVENTUAIS ACORDOS HOMOLOGADOS EM FASE RECURSAL
+
+**PRESERVAÇÃO DE PROVAS TÉCNICAS**
+AMBIENTES DO SISTEMA PRESERVADO (HOMOLOGAÇÃO, PRODUÇÃO, BACKUPS)
+LOGS E HISTÓRICOS DE ACESSO.
+RELATÓRIOS DE ERROS E FALHAS FUNCIONAIS
+PRINTS, E-MAILS, ATAS E DOCUMENTOS CORRELATOS
+CADEIA DE CUSTÓDIO DE PROVAS
+POLÍTICAS DE SEGURANÇA DA INFORMAÇÃO DO CLIENTE
+EVIDÊNCIAS DE VERSIONAMENTO DE SISTEMAS E ATUALIZAÇÕES APLICADAS
+INVENTÁRIO TÉCNICO DOS AMBIENTES DE TI (SERVIDORES, INFRAESTRUTURA)
+
+**MATRIZ DE PROVAS**
+EVIDÊNCIAS JÁ JUNTADAS AOS AUTOS
+EVIDÊNCIAS FALTANTES E ESTRATÉGIA DE OBTENÇÃO
+FORÇA PROBATÓRIA DE CADA DOCUMENTO (FORTE, MÉDIA, FRACA)
+CORRELAÇÃO ENTRE PROVAS E QUESITOS PERICIAIS
+GRAU DE CONFIABILIDADE DA ORIGEM DOCUMENTAL (PRODUÇÃO UNILATERAL, BILATERAL, PÚBLICA)
+IDENTIFICAÇÃO DE POSSÍVEIS CONTRATIÇÕES ENTRE DOCUMENTOS
+
+**ESTRATÉGICA JURÍDICA E TÉCNICA**
+PONTOS FORTES DO CLIENTE (FALHAS DA RÉ, PROVAS ROBUSTAS)
+PONTOS FRÁGEIS (LACUNAS PROBATÓRIAS, RISCOS DE INTERPRETAÇÃO)
+ESTRATÉGIAS DE BLINDAGEM CONTRA MANIPULAÇÃO DA PROVA
+PREPARAÇÃO DE QUESITOS E MANIFESTAÇÕES TÉCNICAS
+AVALIAÇÃO DA POSTURA PROCESSUAL DA PARTE CONTRÁRIA (COOPERATIVA, PROTELATÓRIA, OMISSIVA)
+POSSIBILIDADE DE ACORDO OU MEDIAÇÃO COMO ALTERNATIVA
+CENÁRIOS DE RISCO ECONÔMICO (PIOR CASO, MELHOR CASO, PROVÁVEL)
+
+**ESTIMATIVA DE DANOS E IMPACTOS**
+VALORES PAGOS E COMPROVADOS
+PREJUÍZOS OPERACIONAIS (PARALIZAÇÃO, RETRABALHO, FALHAS FISCAIS)
+LUCROS CESSANTES ESTIMADOS
+IMPACTO NO VALUATION DA EMPRESA CLIENTE.
+CUSTOS DE MITIGAÇÃO JÁ INCORRIDOS PELO CLIENTE (CONSULTORIAS, RETRABALHO INTERNO)
+DANOS À IMAGEM E REPUTAÇÃO (IMPACTO EM CLIENTES, FORNECEDORES, MERCADO)
+CUSTOS COM COMPLIANCE  E ADEQUAÇÃO FISCAL/TRIBUTÁRIA APÓS FALHAS DO SISTEMA
+
+**ROTEIRO DE ENTREVISTAS COM O CLIENTE**
+HISTÓRICO DO CONTRATO E DAS NEGOCIAÇÕES
+EXPECTATIVAS VERSUS ENTREGAS
+PRINCIPAIS FALHAS RELATADAS
+EVIDÊNCIAS DOCUMENTAIS DISPONÍVEIS
+INDENTIFICAÇÃO DE USUÁRIOS-CHAVE E LIDERANÇAS INTERNAS
+IDENTIFICAÇÃO DE TESTEMUNHAS POTENCIAIS
+LEVANTAMENTO DE COMUNICAÇÕES INFORMAIS (MENSAGENS, GRUPOS CORPORATIVOS)
+MAPEAMENTO DE ÁREAS MAIS IMPACTADDAS (FINANCEIRO, PRODUÇÃO, LOGÍSTICA, FISCAL)
+
+**MODELOS E TEMPLATES**
+MINUTA DE PARECER TÉCNICO-JURÍDICO
+ESTRUTURA PADRÃO DE QUESITOS
+MODELOS DE CRONOLOGIA DE FALHAS
+ESTRUTURA DE MATRIZ DE PROVAS
+ESTRUTURA DE CÁLCULO ECONÔMICO-FINANCEIRO DE DADOS
+CHECKLISTS DE PRESERVAÇÃO DE EVIDÊNCIAS DIGITAIS (FORENSE)
+
+**ANEXOS **
+CÓPIAS INTEGRAIS DOS CONTRATOS
+PROPOSTAS COMERCIAIS
+CRONOGRAMAS ORIGINAIS E REVISADOS
+NOTIFICAÇÕES EXTRAJUDICIAIS
+RELATÓRIOS INTERNOS DO CLIENTE
+COMUNICADOS FORMAIS ENTRE AS PARTES
+CORRESPONDÊNCIAS INFORMAIS RELEVANTES (WHATSAPP CORPORATIVO, TEAMS, ETC)
+RELAT´RORIOS DE AUDITORIAS EXTERNAS INDEPENDENTES
+MATERIAIS DE APRESENTAÇÃO E RELATÓRIOS ENTREGUES AO CONSELHO/DIRETORIA
+
+**CONTEXTO REGULATÓRIO E SETORIAL**
+NORMAS TÉCCNICAS E REGULATÓRIAS APLICÁVEIS AO CASO (BACEN, CVM, ANVISA, RECEITA FEDERAL ETC
+LEGISLAÇÃO ESPECÍFICA DO SETOR (EX.: TECNOLOGIA, SAÚDE, ENERGIA)
+PRECEDENTES ADMINISTRATIVOS OU JURISPRUDENCIAIS EM CASOS SEMELHANTES
+
+**GOVERNANÇA CORPORATIVA E COMPLIANCE**
+ESTRUTURA ORGANIZACIONAL DA EMPRESA CLIENTE (ORGONOGRAMAS, COMITÊS, RESPONSÁVEIS)
+POLÍTICAS INTERNAS DE COMPLIANCE, AUDITORIA E CONTROLES INTERNOS
+CÓDIGO DE CONDUTA E MANUAIS INTERNOS APLICÁVEIS À CONTRATAÇÃO E EXECUÇÃO
+
+**GESTÃO DE RISCOS E SEGUROS**
+APÓLICES DE SEGURO CONTRATADAS (RESPONSABILIDADE CIVIL, E&O, CYBER RISK)
+ANÁLISE DE COBERTURA PARA FALHAS OPERACIONAIS OU DE SISTEMAS
+REGISTRO DE INCIDENTES DE RISCO REPORTADOS INTERNAMENTE
+
+**COMUNICAÇÃO E RELAÇÕES INSTITUCIONAIS **
+COMUNICADOS OFICIAIS AO MERCADO, CLIENTES OU FORNECEDORES SOBRE FALHAS
+NOTAS DE IMPRENSA OU DIVULGAÇÃO EM MÍDIA
+RELACIONAMENTO COM ÓRGÃOS PÚBLICOS OU ENTIDADES DE CLASSE NO CASO
+IMPACTOS TRABALHISTAS E HUMANOS
+DEMANDAS TRABALHISTAS DERIVADOS DO CASO (EX.: HORAS EXTRAS POR RETRABALHO)
+IMPACTO NA MORAL DOS FUNCIONÁRIOS E CLIMA ORGANIZACIONAL.
+TREINAMENTOS OU REQUALIFICAÇÃO NECESSÁRIOS APÓS FALHAS DO SISTEMA
+
+**GESTÃO DE STAKEHOLDERS **
+IDENTIFICAÇÃO DE TODAS AS PARTES INTERESSADAS (CLIENTES, FORNECEDORES, PARCEIROS)
+EXPECTATIVAS, PRESSÕES E REAÇÕES DE CADA STAKEHOLDER
+ESTRATÉGIAS DE ENGAJAMENTO E MITIGAÇÃO DE CONFLITOS
+
+**ASPECTOS ECONÔMICO-FINANCEIROS AVANÇADOS**
+ESTUDO DE VIABILIDADE E PAYBACK DO PROJETO ORIGINAL (ANTES DA FALHA)
+COMPARATIVO ENTRE PROJEÇÕES E RESULTADOS REAIS (GAP FINANCEIRO)
+ANÁLISE DE CUSTO DE OPORTUNIDADE PERDIDO
+
+</pontos_principais>
+
+Formato esperado:
+  "estrutura_saida": {
+    "1.01": [
+      "A cláusula contratual apresentada atribui à fornecedora a responsabilidade pela manutenção técnica mensal dos sistemas?",
+      "Consta no contrato ou em documentos complementares que a fornecedora manteria suporte funcional e atualização tecnológica contínua?",
+      "A sistemática de faturamento modificada afetou a capacidade da autora de apurar e recolher corretamente os tributos incidentes?"
+    ],
+    "1.02": [
+      "A mudança na sistemática de faturamento implicou aumento dos encargos tributários assumidos pela autora sem alteração contratual formal?",
+      "Há evidência de que a autora continuava exercendo as mesmas funções operacionais mesmo após a modificação no faturamento?",
+      "A comunicação de mudança de faturamento preservou formalmente a condição de representante comercial da autora perante clientes?"
+    ]
+  }
+
+---
+
+### ETAPA 2 – PROVAS & EVIDÊNCIAS
+Objetivo:
+- Para cada índice temático identificado, listar evidências relevantes.
+- Cada evidência deve conter:
+  - "tipo": Contrato, E-mail, Print, Relatório, etc.
+  - "conteudo": trecho ou descrição textual extraída do processo
+  - "resumo": descrição curta da evidência
+  - "referencia": página ou trecho do processo
+
+Formato esperado:
+  "estrutura_saida": {
+    "1.01": [
+      {
+        "tipo": "Contrato",
+        "conteudo": "CLAUSULA PRIMEIRA - OBJETO: Constitui objeto deste contrato a mediação... bem como sua assistência técnica denominada MANUTENÇÃO.",
+        "resumo": "Dispositivo contratual que define o escopo de representação e serviços de suporte.",
+        "referencia": "fl. 11"
+      },
+      {
+        "tipo": "Carta",
+        "conteudo": "REF: Softwares RM... informamos que os serviços serão faturados diretamente pelas produtoras RM e ADM.",
+        "resumo": "Comunicado formal da mudança na sistemática de faturamento dos serviços.",
+        "referencia": "fl. 8"
+      }
+    ]
+  }
+
+
+---
+
+### ETAPA 3 – QUESITOS AUTORA
+Objetivo:
+- Elaborar quesitos técnicos objetivos por índice, favorecendo a parte autora.
+- Basear-se exclusivamente nas provas e evidências associadas ao índice.
+
+Formato esperado:
+  "estrutura_saida": {
+    "1.01": [
+      "A cláusula contratual apresentada atribui à fornecedora a responsabilidade pela manutenção técnica mensal dos sistemas?",
+      "Consta no contrato ou em documentos complementares que a fornecedora manteria suporte funcional e atualização tecnológica contínua?",
+      "A sistemática de faturamento modificada afetou a capacidade da autora de apurar e recolher corretamente os tributos incidentes?"
+    ],
+    "1.02": [
+      "A mudança na sistemática de faturamento implicou aumento dos encargos tributários assumidos pela autora sem alteração contratual formal?",
+      "Há evidência de que a autora continuava exercendo as mesmas funções operacionais mesmo após a modificação no faturamento?",
+      "A comunicação de mudança de faturamento preservou formalmente a condição de representante comercial da autora perante clientes?"
+    ]
+  }
+
+---
+
+### ETAPA: ETAPA 4 – RESPOSTA QUESITOS
+Objetivo:
+- Receba os arquivos os blocos de entrada [Quesitos a serem respondidos (JSON)],[Evidências disponíveis (JSON)] e [Contexto adicional (bloco do processo)]
+- Simular respostas como analista técnico-forense especializado em processos relacionados a empresas de ERP/Tecnologia, após leitura dos blocos de entrada.
+- Usar linguagem formal e defensiva.
+- Justificar as respostas com base em embasamento documental (provas e evidencias).
+
+
+Formato esperado:
+  "estrutura_resposta": {
+    "<código do índice ex: 1.01>": [
+      {
+        "quesito": "<transcrição literal do quesito>",
+        "resposta_tecnica": "<resposta direta ao quesito>",
+        "status_tecnico": "<Conforme | Parcialmente conforme | Não conforme | Inconclusivo>",
+        "justificativa_tecnica": "<base na evidência – transcreva e justifique tecnicamente>",
+        "observacoes_adicionais": "<opcional: apontamentos sobre contexto, limitações ou recomendações>"
+      }
+    ]
+  }
+

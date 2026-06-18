@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+execucoes/
+evid_mudancas_estruturais/
+evid_mudancas_estruturais.zip
+*.db
+*.sqlite3
+Validação/
+*_old*.py
+debug_*.json
+.git/
+.github/

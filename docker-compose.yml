@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  evid_app:
+    build: .
+    image: ghcr.io/walterrosa2/evid_prova_quesito_resposta:latest
+    container_name: evid_provas
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./evid_provas.db:/app/evid_provas.db
+      - ./execucoes:/app/execucoes
+    env_file:
+      - .env

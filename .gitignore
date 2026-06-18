@@ -1,0 +1,22 @@
+# Chaves de API e Secrets
+.env
+
+# Banco de dados e Cache
+*.db
+*.sqlite3
+__pycache__/
+*.pyc
+
+# Diretórios de execução e evidências
+execucoes/
+evid_mudancas_estruturais/
+evid_mudancas_estruturais.zip
+*.xlsx
+
+# Configurações do Streamlit (opcional, mas evita subir config de server head local)
+# .streamlit/
+
+# Pastas de validação e rascunhos (caso use localmente)
+Validação/
+*_old*.py
+debug_*.json

@@ -1,0 +1,66 @@
+INSTRUÇÕES GERAIS IMPORTANTES:
+
+2. Mantenha o formato JSON puro, sem adicionar comentários, textos explicativos ou observações fora da estrutura solicitada.
+3. Nunca invente dados — use apenas as informações presentes no `TEXTO ANALISADO`.
+4. Preserve exatamente a numeração e a referência de páginas/trechos conforme aparecem no texto analisado.
+5. Caso não encontre informações para preencher, retorne a chave com valor vazio ou lista vazia conforme o formato solicitado.
+
+---
+
+### ETAPA 1 – PROVAS & EVIDÊNCIAS
+
+Instruções de Análise:
+
+Divisão do Documento:
+Analise o documento em blocos. Forneça os seguintes detalhes para cada bloco:
+
+Tipo de Evidência: Classifique as evidências identificadas como: Contratos, Notas Fiscais, E-mails, Prints de Tela, Correspondências Oficiais, Relatórios, etc.
+Trecho: Como a paginação do arquivo pode conter inconsistências, será necessário trazer trechos do documento de forma que facilite a identificação da página
+Conteúdo: Descreva o conteúdo brevemente com base no contexto fornecido.
+Resumo: Ofereça um resumo objetivo do que a evidência aborda e sua relevância para o caso.
+Referência: Identifique no arquivo o trecho <pagina>. Todas as paginas do arquivo de entrada possuem a expressão <pagina> que caracteriza a página.
+
+
+<pagina>
+Identifique o trecho [<pagina>] e a numeração na sequência corresponde a numeração da página.
+</pagina>
+
+
+Pontos de Foco:
+Direcione a análise para:
+- Provas contratuais: Termos de contratos e aditivos.
+- Cobranças e pagamentos: Notas fiscais, tabelas de valores e correspondências financeiras.
+- Cronologia de eventos: Datas importantes relacionadas a ações, assinaturas e notificações.
+- Relatos de problemas ou não conformidades: E-mails ou cartas que mencionem falhas ou reclamações.
+- Qualquer correspondência que indique acordos ou tentativas de resolução.
+
+Validação de Evidências:
+Certifique-se de:
+- Validar se os documentos citados são provas diretas ou contextuais.
+- Relacionar as evidências com os pontos principais do caso descritos no processo.
+- Toda nova linha de evidência precisa OBRIGATORIAMENTE gerar todos os pontos: Tipo de Evidência, Conteúdo, Resumo, Referência.
+- Cada evidência deve conter:
+  - "tipo": Contrato, E-mail, Print, Relatório, etc.
+  - "conteudo": trecho ou descrição textual extraída do processo
+  - "resumo": descrição curta da evidência
+  - "referencia": página ou trecho do processo <pagina>
+
+Formato esperado:
+  "estrutura_saida": {
+    "1.01": [
+      {
+        "tipo": "Contrato",
+        "conteudo": "CLAUSULA PRIMEIRA - OBJETO: Constitui objeto deste contrato a mediação... bem como sua assistência técnica denominada MANUTENÇÃO.",
+        "resumo": "Dispositivo contratual que define o escopo de representação e serviços de suporte.",
+        "referencia": "PAGINA 11"
+      },
+      {
+        "tipo": "Carta",
+        "conteudo": "REF: Softwares RM... informamos que os serviços serão faturados diretamente pelas produtoras RM e ADM.",
+        "resumo": "Comunicado formal da mudança na sistemática de faturamento dos serviços.",
+        "referencia": "PAGINA 8"
+      }
+    ]
+  }
+
+
