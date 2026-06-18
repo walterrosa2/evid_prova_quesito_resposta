@@ -17,11 +17,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expõe a porta do Streamlit
-EXPOSE 8501
+EXPOSE 8519
 
 # Criação das pastas de dados esperadas pela aplicação
 RUN mkdir -p /app/execucoes && chmod 777 /app/execucoes
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8519/_stcore/health || exit 1
 
-ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8519", "--server.address=0.0.0.0"]
