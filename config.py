@@ -2,9 +2,12 @@
 from pathlib import Path
 
 import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 # === CHAVE DA API GEMINI ===
-GOOGLE_API_KEY = "AIzaSyAmKniS7s6odyTWF1Pm9sV7FJtQbG3xFnc"  # Substitua pela chave real
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 
 
 

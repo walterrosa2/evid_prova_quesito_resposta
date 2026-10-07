@@ -22,7 +22,7 @@ except Exception:
 try:
     from config import GEMINI_MODEL as _GEMINI_MODEL
 except Exception:
-    _GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    _GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 try:
     import google.generativeai as genai

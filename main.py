@@ -20,6 +20,7 @@ import pandas as pd
 from evidence_mapper import mapear_provas
 from quesito_generator import gerar_quesitos
 from resposta_simulator import simular_respostas
+from excel_evidence_loader import carregar_evidencias_excel, injetar_evidencias_em_execucao
 
 # Módulos utilitários existentes no projeto (mantidos)
 from upload_interface import carregar_texto
@@ -241,6 +242,19 @@ if menu == "Nova Análise":
         from pathlib import Path
         st.session_state["nome_execucao"] = Path(pasta_execucao).name
 
+        # IMPORTAÇÃO DE EVIDÊNCIAS DE PLANILHA EXCEL PRÉ-EXISTENTE
+        with st.expander("📊 Importar Planilha de Evidências Pré-Mapeadas (.xlsx)"):
+            caminho_excel_input = st.text_input(
+                "Caminho do arquivo Excel (.xlsx) com evidências pré-mapeadas:",
+                value=r"E:\Backup_HD_Walter\Cruvinel_dados\Plataforma Fundos Investimentos\Dados\ELETROMAR X TOTVS\evidencias_ELETROMAR X TOTVS.xlsx"
+            )
+            if st.button("📥 Carregar e Injetar Evidências na Etapa de Provas"):
+                try:
+                    arquivos = injetar_evidencias_em_execucao(caminho_excel_input, pasta_execucao, num_blocos=len(blocos))
+                    st.success(f"✅ {len(arquivos)} arquivo(s) de provas importado(s) com sucesso da planilha Excel!")
+                    st.info("A etapa de PROVAS foi preenchida! Agora você pode prosseguir para as etapas de QUESITOS e RESPOSTAS.")
+                except Exception as err:
+                    st.error(f"Erro ao importar planilha de evidências: {err}")
 
         # BOTÃO ÚNICO – executa 2→3→4 para todos os blocos
         with st.expander("🚀 Executar TODAS as etapas (2→3→4)"):
